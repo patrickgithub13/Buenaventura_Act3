@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/default.css">
+    <link rel="stylesheet" href="styles/main.css">
+
+    <title>Sign Up</title>
+</head>
+<body>
+    <div class="content">
+        <video autoplay muted loop id="video-background">
+            <source src="sl-bg.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <form class="form">
+            <h3 class="header">Solo Leveling</h3>
+            <p class="title">Register</p>
+                <div class="flex">
+                <label>
+                    <input class="input name" type="text" placeholder="" required>
+                    <span>First Name</span>
+                </label>
+
+                <label>
+                    <input class="input name" type="text" placeholder="" required>
+                    <span>Middle Name</span>
+                </label>
+
+                <label>
+                    <input class="input name" type="text" placeholder="" required>
+                    <span>Last Name</span>
+                </label>
+            </div>  
+
+            <label>
+                <input class="input birthday-input" type="date" placeholder="mm/dd/yyyy" required>
+                <span>Birthday</span>
+            </label>
+
+            <label>
+                <input class="input" type="tel" placeholder="" pattern="09[0-9]{9}" maxlength="11" required>
+                <span>Mobile No.</span>
+            </label>
+
+            <div class="gender-container">
+                <input type="radio" name="gender" id="male">Male</input>
+                <input type="radio" name="gender" id="female">Female</input>
+            </div>
+
+            <label>
+                <input class="input" type="email" placeholder="" required>
+                <span>Email</span>
+            </label> 
+                
+            <label>
+                <input class="input" type="password" placeholder="" required>
+                <span>Password</span>
+            </label>
+            <label>
+                <input class="input" type="password" placeholder="" required>
+                <span>Confirm password</span>
+            </label>
+
+            <div class="policy-container">
+                <input type="checkbox" class="policy">By signing up, you agree to our Terms and Conditions and Privacy Policy.</input>
+            </div>
+
+            <button class="submit">Submit</button>
+            <p class="signin">Already have an acount ? <a href="#">Sign in</a> </p>
+        </form>
+
+        <div class="popup">
+                <img src="image/dagger.png" alt="dagger icon" class="dagger dagger1">
+                <img src="image/dagger.png" alt="dagger icon" class="dagger dagger2">
+                <img src="image/close-icon.png" alt="close icon" class="close-icon">
+                <h3 class="question">You need help?</h3>
+                <textarea name="" id="" placeholder="Type your concerns..."></textarea>
+                
+                <button class="button-with-icon">
+                <svg
+                    class="icon"
+                    id="Play"
+                    viewBox="0 0 48 48"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                    class="color000000 svgShape"
+                    fill="#ffffff"
+                    d="M12 39c-.549 0-1.095-.15-1.578-.447A3.008 3.008 0 0 1 9 36V12c0-1.041.54-2.007 1.422-2.553a3.014 3.014 0 0 1 2.919-.132l24 12a3.003 3.003 0 0 1 0 5.37l-24 12c-.42.21-.885.315-1.341.315z"
+                    ></path>
+                </svg>
+                <span class="text">Submit</span>
+                </button>
+        </div>
+
+        <div class="help-container">
+            <img id="help-icon" src="image/help-icon.png" alt="icon">
+           <a href="index1.html"> <img id="table-form" src="image/table.png" alt="icon"></a>
+        </div>
+        
+    </div>
+</body>
+
+    <script src="script.js"></script>
+
+</html>

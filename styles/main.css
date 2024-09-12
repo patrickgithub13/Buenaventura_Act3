@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@font-face {
+    font-family: 'SoloLeveling';
+    src: url("../font/SoloLevelDemo.otf");
+}
+@font-face {
+    font-family: 'SoloLevelingBold';
+    src: url("../font/MonumentExtended-Ultrabold.otf");
+}
+.content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0, 0.4); 
+}
+
+#video-background {
+    position: absolute;
+    top: 0;
+    left: 1;
+    object-fit: cover;
+    min-width: 100vw;
+    min-height: 100vh;
+    z-index: -1;
+}
+
+.name, textarea {
+    text-transform: capitalize;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 550px;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    background-color: #1a1a1a;
+    color: #fff;
+    border: 1px solid #333;
+  }
+
+  .header {
+    font-family: "SoloLeveling", sans-serif;
+    text-align: center;
+    font-size: 5em;
+    font-weight: 500;
+    display: inline-block;
+    animation: bounce 2s infinite linear;
+  }
+  
+  .title {
+    font-family: "SoloLevelingBold", sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    color: #00bfff;
+  }
+  
+  .title::before {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .title::after {
+    width: 18px;
+    height: 18px;
+    animation: pulse 1s linear infinite;
+  }
+  
+  .title::before,
+  .title::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: #00bfff;
+  }
+  
+  .message, 
+  .signin,
+  .policy-container {
+    font-size: 14.5px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .policy-container {
+    text-align: center;
+    font-size: 14px;
+  }
+
+  input[type="checkbox"] {
+    margin-right: 10px;
+}
+  
+  .signin {
+    text-align: center;
+  }
+  
+  .signin a:hover {
+    text-decoration: underline royalblue;
+  }
+  
+  .signin a {
+    color: #00bfff;
+  }
+  
+  .flex {
+    display: flex;
+    width: 100%;
+    gap: 6px;
+  }
+  
+  .form label {
+    position: relative;
+  }
+  
+  .form label .input {
+    background-color: #333;
+    color: #fff;
+    width: 100%;
+    padding: 20px 05px 05px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+  }
+
+  .gender-container {
+    text-align: center;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    font-size: 14.5px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .birthday-input::placeholder{
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .form label .input + span {
+    color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    left: 10px;
+    top: 0px;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+  }
+  
+  .form label .input:placeholder-shown + span {
+    top: 12.5px;
+    font-size: 0.9em;
+  }
+  
+  .form label .input:focus + span,
+  .form label .input:valid + span {
+    color: #00bfff;
+    top: 0px;
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+  
+  .input {
+    font-size: medium;
+  }
+  
+  .submit {
+    border: none;
+    outline: none;
+    margin-top: 1em;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: .3s ease;
+    background-color: #00bfff;
+    cursor: pointer;
+    transition: all 0.3s linear;
+  }
+  
+  .submit:hover {
+    background-color: #00bfff96;
+    transform: scale(1.05);
+  }
+
+  .help-container {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    cursor: pointer;
+    display: flex;
+    gap: 5px;
+  }
+
+  #table-form{
+    width: 40px;
+    height: 40px;
+    background-color:#2196f3;
+    border-radius: 50%;
+    padding: 3px;
+    margin-top: 5px;
+  }
+
+  /* Popup */
+  .popup{
+    position: relative;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding: 2em;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    width: 60%;
+    height: 60%;
+    opacity: 0;
+    transform: translateY(20px); 
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    background-image: url(../image/blue-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .popup.fade-in {
+    display: flex;
+    animation: fadeUp 0.3s forwards; 
+}
+
+.popup.fade-out {
+    animation: fadeDown 0.3s forwards;
+}
+
+  .dagger1 {
+    position: absolute;
+    width: 130px;
+    transform: rotate(45deg);
+    top: -8em;
+    left: 31em;
+  }
+
+  .dagger2 {
+    position: absolute;
+    width: 130px;
+    transform: rotate(-45deg) rotateY(180deg);;
+    top: -8em;
+    left: 25em;
+  }
+
+  .close-icon {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background: #FFFFFF;
+    border-radius: 50%;
+    padding: 7px;
+    width: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .close-icon:hover {
+    transform: scale(1.1);
+  }
+
+  .question {
+    text-align: center;
+    margin-bottom: .2em;
+    font-family: "SoloLevelingBold", sans-serif;
+    background: #FFFFFF;
+    background: linear-gradient(to right, #FFFFFF 67%, #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    font-size: 2rem;
+    text-shadow: 
+        1px 1px 2px rgba(0, 0, 0, 0.5),
+        2px 2px 4px rgba(0, 0, 0, 0.3),  
+        3px 3px 6px rgba(0, 0, 0, 0.2); 
+  }
+
+  textarea {
+    width: 90%;
+    height: 60%;
+    border-radius: 8px;
+    padding: 1.5em;
+    margin-bottom: 2em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    resize: none;
+    font-size: 0.7rem;
+  }
+
+  textarea::placeholder {
+    font-family: "Press Start 2P", system-ui;
+  }
+
+  textarea:focus {
+    outline: none;
+  }
+
+.button-with-icon {
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #0080dc;
+    font-family: "Istok Web", sans-serif;
+    letter-spacing: 1px;
+    padding: 0 12px;
+    text-align: center;
+    width: 120px;
+    height: 40px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: normal;
+    border-radius: 3px;
+    outline: none;
+    user-select: none;
+    cursor: pointer;
+    transform: translateY(0px);
+    position: relative;
+    box-shadow:
+      inset 0 30px 30px -15px rgba(255, 255, 255, 0.1),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.3),
+      inset 0 1px 20px rgba(0, 0, 0, 0),
+      0 3px 0 #0f6a98,
+      0 3px 2px rgba(0, 0, 0, 0.2),
+      0 5px 10px rgba(0, 0, 0, 0.1),
+      0 10px 20px rgba(0, 0, 0, 0.1);
+    background: #0076c4;
+    color: white;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+    transition: 150ms all ease-in-out;
+  }
+  
+  .button-with-icon .icon {
+    margin-right: 8px;
+    width: 24px;
+    height: 24px;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .button-with-icon:active {
+    transform: translateY(3px);
+    box-shadow:
+      inset 0 16px 2px -15px rgba(0, 0, 0, 0),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.15),
+      inset 0 1px 20px rgba(0, 0, 0, 0.1),
+      0 0 0 #0f6898,
+      0 0 0 2px rgba(255, 255, 255, 0.5),
+      0 0 0 rgba(0, 0, 0, 0),
+      0 0 0 rgba(0, 0, 0, 0);
+  }
+  
+  .button-with-icon:hover .text {
+    transform: translateX(80px);
+  }
+  .button-with-icon:hover .icon {
+    transform: translate(33px);
+  }
+  
+  .text {
+    transition: all 0.5s ease-in-out;
+    font-size: 14px;
+  }
+
+  @keyframes pulse {
+    from {
+      transform: scale(0.9);
+      opacity: 1;
+    }
+  
+    to {
+      transform: scale(1.8);
+      opacity: 0;
+    }
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px); 
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
